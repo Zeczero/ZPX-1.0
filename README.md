@@ -1,5 +1,5 @@
 # ZPX-1.0 - CS:GO Cheat
-ZPX is developed version of my old cheat
+ZPX is developed version of my old cheat.
 Cheat was developed between 2019-2020.
 
 ### 🎡Features
