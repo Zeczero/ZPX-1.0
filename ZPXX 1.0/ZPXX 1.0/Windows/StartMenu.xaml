@@ -1,0 +1,98 @@
+﻿<Window x:Class="ZPXX_1._0.Windows.StartMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZPXX_1._0"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        BorderBrush="Black"
+        Foreground="Black"
+        Title="ZPXX MultiCheat" Height="400" Width="700">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="StartButton" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="20" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="#FFE342AD" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#1351AD"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Rectangle Height="369" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1A37BB"/>
+                    <GradientStop Color="#FF132964" Offset="1"/>
+                    <GradientStop Color="#FF3A1B9E" Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Margin="225,163,0,0" Height="54"
+                FontFamily="Microsoft Sans Serif"
+                FontSize="30" Style="{DynamicResource StartButton}" Click="Start_Click"
+                />
+        <TextBlock x:Name="Cheatname" HorizontalAlignment="Left" Text="ZPXX Cheat" Foreground="White"  VerticalAlignment="Top" Margin="251,28,0,0" Height="56" Width="193"
+                   FontSize="36" FontWeight="ExtraLight" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" TextTrimming="WordEllipsis" FontStretch="Condensed" RenderTransformOrigin="0.452,0.547"
+                   />
+        <TextBlock x:Name="credits" HorizontalAlignment="Left" Text="by Zeczero" Foreground="White" VerticalAlignment="Top" Margin="391,84,0,0" Height="25" Width="111" FontSize="20" FontStretch="Expanded" FontWeight="Thin" TextOptions.TextHintingMode="Fixed" TextTrimming="WordEllipsis" TextWrapping="Wrap"/>
+        <TextBlock x:Name="version" HorizontalAlignment="Left" TextWrapping="Wrap" Text="v1.0" Foreground="White" VerticalAlignment="Top" Margin="343,84,0,0" Height="25" Width="48" FontSize="20" FontWeight="Bold"/>
+        <Image Source="/icons/1.png" Width="Auto" Margin="261,283,400,52" RenderTransformOrigin="0.577,0.51" />
+        <TextBlock x:Name="Github" HorizontalAlignment="Left" TextDecorations="Underline" Foreground="#FF09E343" VerticalAlignment="Top" Margin="297,283,0,0" Width="133" Height="25" FontSize="18" FontWeight="SemiBold" TextOptions.TextHintingMode="Fixed" TextWrapping="Wrap">
+            <Hyperlink Foreground="#FF09E343" NavigateUri="https://github.com/Zeczero" Click="Github_Click" RequestNavigate="Hyperlink_RequestNavigate"> 
+                Join my GitHub
+            </Hyperlink>
+        </TextBlock>
+        <Image Source="/icons/2.png" Margin="257,323,395,14" RenderTransformOrigin="0.661,-0.265" />
+        <TextBox x:Name="BTC_ID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" IsReadOnly="True" Text="16kfjwYWHL5RxWJUeE28SheTKb4yuKqxPJ" Background="#e1e4e8" VerticalAlignment="Top" Width="270" Margin="297,323,0,0" FontSize="14"/>
+    </Grid>
+</Window>

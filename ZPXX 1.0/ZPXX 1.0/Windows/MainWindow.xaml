@@ -1,0 +1,21 @@
+﻿<Window x:Class="ZPXX_1._0.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZPXX_1._0.Windows"
+        mc:Ignorable="d"
+        WindowStyle="ToolWindow"
+        Title="ZPXX 1.0 Menu" Height="200" Width="178.587">
+    <Grid Background="#FF285194">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="GlowESP" Content="Glow ESP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="20" Width="109" FontSize="14" FontFamily="Microsoft Sans Serif" Checked="GlowESP_Checked"/>
+        <CheckBox x:Name="Radar" Content="Radar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,35,0,0" FontSize="14" FontFamily="Microsoft Sans Serif" Checked="Radar_Checked" Height="19" Width="69"/>
+        <CheckBox x:Name="TriggerBot" Content="Trigger Bot" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,59,0,0" FontSize="14" FontFamily="Microsoft Sans Serif" Checked="TriggerBot_Checked" Height="19" Width="109"/>
+        <TextBlock x:Name="Warning" HorizontalAlignment="Left" Foreground="LightGray" TextWrapping="Wrap" Text="This cheat is 100% free if you paid for it you got SCAMMED!" VerticalAlignment="Top" Margin="26,104,0,0" Width="118" Height="56" RenderTransformOrigin="0.475,0.482"/>
+        <CheckBox x:Name="Bunnyhop" Content="Bunnyhop" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,83,0,0" FontSize="14" FontFamily="Microsoft Sans Serif" Checked="Bunnyhop_Checked"/>
+    </Grid>
+</Window>
