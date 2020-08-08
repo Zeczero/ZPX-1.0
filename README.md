@@ -13,8 +13,3 @@ Cheat was developed between 2019-2020.
 ### 📬 Contact
 
 * Telegram: Zeczero
-
-### ☕ Support me
-
-* Bitcoin: `16kfjwYWHL5RxWJUeE28SheTKb4yuKqxPJ`
-* Ethereum: `0x702DfD7ee7134643ddc9B9aEB2740aD2016Af879`
